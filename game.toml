@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "X-COM - UFO Defense"
+id = "SLUS-00141"
+players = 1
+exe = "disc/SLUS_001.41"
+disc = "disc/X-COM - UFO Defense (USA).cue"
+discs = ["disc/X-COM - UFO Defense (USA).cue"]
+disc_serials = ["SLUS-00141"]
+load_address = "0x8003209C"
+entry_pc = "0x8003225C"
+text_size = "0x00000800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "X-COM - UFO Defense (USA) (Track 1).bin"
+cue_name = "X-COM - UFO Defense (USA).cue"
+boot_exe = "SLUS_001.41"
+known_sizes = [119432208]
+known_md5 = [
+  "d7a3ab023f71f5399587263dfdb73ca5",
+]
+known_sha1 = [
+  "d25a909e356f4ba56ae8a807efd77e9ecac48ea8",
+]
+known_crc32 = [
+  "de339b27",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "X-COM - UFO Defense Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 13
+required_disc_fp = "3dbda54cff6c1105a254754b8c283844578ca6a2c275d6554927114442b0f168"

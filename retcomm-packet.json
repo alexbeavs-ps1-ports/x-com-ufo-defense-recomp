@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "x-com-ufo-defense-psx",
+  "name": "X-COM - UFO Defense",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "x-com-ufo-defense-recomp",
+  "rom_identity": {
+    "crc32": [
+      "de339b27"
+    ],
+    "md5": [
+      "d7a3ab023f71f5399587263dfdb73ca5"
+    ],
+    "sha1": [
+      "d25a909e356f4ba56ae8a807efd77e9ecac48ea8"
+    ],
+    "disc_serials": [
+      "SLUS-00141"
+    ],
+    "sizes": [
+      119432208
+    ],
+    "filenames": [
+      "X-COM - UFO Defense (USA).cue",
+      "X-COM - UFO Defense (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      13
+    ],
+    "disc_fps": [
+      "3dbda54cff6c1105a254754b8c283844578ca6a2c275d6554927114442b0f168"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/x-com-ufo-defense-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "x-com-ufo-defense-*-windows-x64.zip",
+      "linux-x64": "x-com-ufo-defense-*-linux-x64.zip",
+      "macos-arm64": "x-com-ufo-defense-*-macos-arm64.zip",
+      "macos-x64": "x-com-ufo-defense-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "x_com_ufo_defense.exe",
+    "linux": "x_com_ufo_defense",
+    "macos": "x_com_ufo_defense"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/x-com-ufo-defense-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
